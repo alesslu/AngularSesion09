@@ -1,1 +1,42 @@
-<p>calculadora works!</p>
+<div style="border: 1px solid; max-width: 500px; padding: 10px;">
+
+    <label for="" class="">Ingrese primer valor:</label>
+    <div>
+        <input [(ngModel)]="valoruno" type="number" class="" id="" />
+    </div> <br>
+
+    <div class="">
+        <label for="" class="">Ingrese segundo valor:</label>
+        <div>
+            <input [(ngModel)]="valordos" type="number" class="" id="" />
+        </div>
+
+        <br>
+
+        <select [(ngModel)]="operacion">
+            <option value="defecto">Operacion?</option>
+            <option value="sumar">Sumar</option>
+            <option value="restar">Restar</option>
+            <option value="multiplicar">Multiplicar</option>
+            <option value="dividir">Dividir</option>
+        </select>
+
+        <br><br>
+
+
+        <div [ngClass]="{
+        suma: operacion ==='sumar',
+        resta: operacion ==='restar',
+        multi: operacion ==='multiplicar',
+        division: operacion ==='dividir'
+    }">
+
+            <span>Resultado: </span>
+            <span *ngIf="operacion !== 'defecto'">{{ calcular() }}</span>
+            <span *ngIf="operacion === 'defecto'" [ngClass]="['no-eligio']">
+                ¡Debe elegir una operación!
+            </span>
+        </div>
+
+    </div>
+</div>
