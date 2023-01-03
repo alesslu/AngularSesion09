@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./calculadora.component.css']
 })
 export class CalculadoraComponent {
+  title = 'Sesion 09';
   valoruno: number = 0;
   valordos: number = 0;
   resultado: number = 0;
